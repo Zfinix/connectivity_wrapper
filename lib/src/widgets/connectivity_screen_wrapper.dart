@@ -1,9 +1,7 @@
-// Flutter imports:
-
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:connectivity_wrapper/src/utils/constants.dart';
 import 'package:flutter/material.dart';
-// Package imports:
+
 import 'package:provider/provider.dart';
 
 enum PositionOnScreen {
@@ -77,8 +75,8 @@ class ConnectivityScreenWrapper extends StatelessWidget {
       child: AnimatedContainer(
         height: _height,
         width: MediaQuery.of(context).size.width,
-        decoration:
-            decoration ?? BoxDecoration(color: color ?? Colors.red.shade500),
+        decoration: decoration ??
+            BoxDecoration(color: color ?? const Color(0xFFE1404D)),
         child: Center(
           child: Text(
             message ?? disconnectedMessage,

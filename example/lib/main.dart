@@ -2,9 +2,11 @@ import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:connectivity_wrapper_example/screens/menu_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ConnectivityAppWrapper(
@@ -14,6 +16,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: MenuScreen(),
+        builder: (buildContext, widget) {
+          return ConnectivityWidgetWrapper(
+            disableInteraction: true,
+            height: 80,
+            child: widget,
+          );
+        },
       ),
     );
   }
